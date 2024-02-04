@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('/upload', 'CsvUploadController@upload')->name('upload');
+
+Route::post('/upload', [CsvUploadController::class, 'upload'])->name('upload');
